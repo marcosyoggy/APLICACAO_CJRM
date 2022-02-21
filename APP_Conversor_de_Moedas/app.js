@@ -19,12 +19,12 @@ input_Currencies.addEventListener('input', () => {
 
   select_One.forEach(async (item) => {
     ref_Coin_Select01 = item.value
-    obj_Info = await conversions_Values(item.value)
-    first_Select = obj_Info[item.value]
+    obj_Info = await conversions_Values(ref_Coin_Select01)
+    first_Select = obj_Info[ref_Coin_Select01]
     
     select_Two.forEach(async (item) => {
       ref_Coin_Select02 = item.value
-      second_Select = obj_Info[item.value]
+      second_Select = obj_Info[ref_Coin_Select02]
     })
 
     converted_values.textContent = (input_Currencies.value * (second_Select / first_Select)).toFixed(2)
